@@ -1,38 +1,89 @@
-const motion = !matchMedia("(prefers-reduced-motion: reduce)").matches;
-const roles = ["Developer", "Designer", "Creator"];
-const typingEl = document.getElementById("typing");
-let ri = 0, ci = 0, del = false;
+document.documentElement.classList.add("js");
 
-function tickType() {
-  if (!motion) { typingEl.textContent = roles[0]; return; }
-  const w = roles[ri];
-  typingEl.textContent = del ? w.slice(0, ci--) : w.slice(0, ++ci);
-  if (!del && ci === w.length) setTimeout(() => (del = true, tickType()), 1200);
-  else if (del && ci === 0) { del = false; ri = (ri + 1) % roles.length; setTimeout(tickType, 400); }
-  else setTimeout(tickType, del ? 50 : 90);
-}
-tickType();
+const M = !matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-document.querySelectorAll(".reveal").forEach((el) => {
-  new IntersectionObserver(([e]) => e.isIntersecting && el.classList.add("is-visible"), { threshold: 0.15 }).observe(el);
-});
-if (!motion) document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-visible"));
+const t = document.getElementById("typing"),
+R = [
+  "Neural Networks",
+  "Inference",
+  "Vision Language Model",
+  "Embeddings",
+  "Dense Retrieval",
+  "Imitation Learning",
+  "Transformers",
+  "Artificial Intelligence"
+];
 
-const sections = [...document.querySelectorAll(".section")];
-const links = [...document.querySelectorAll(".nav-link")];
-window.addEventListener("scroll", () => {
-  const y = scrollY + 120;
-  const cur = sections.findLast((s) => s.offsetTop <= y) || sections[0];
-  links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === `#${cur.id}`));
-}, { passive: true });
+let ri = 0, ci = 0, del = 0;
 
-document.querySelector(".skills-list").addEventListener("click", (e) => {
-  const chip = e.target.closest(".skill-chip");
-  if (!chip) return;
-  document.querySelectorAll(".skill-chip").forEach((c) => c.classList.toggle("is-active", c === chip));
-  const f = chip.dataset.filter;
-  document.querySelectorAll(".project-card").forEach((card) => {
-    const tags = card.dataset.tags.split(" ");
-    card.classList.toggle("is-hidden", f !== "all" && !tags.includes(f));
+(function tick() {
+  if (!M) return void (t.textContent = R[0]);
+
+  const w = R[ri];
+  const text = del ? w.slice(0, ci--) : w.slice(0, ++ci);
+
+  t.innerHTML = `<strong>${text.charAt(0)}</strong>${text.slice(1)}`;
+
+  if (!del && ci === w.length)
+    setTimeout(() => (del = 1, tick()), 1200);
+
+  else if (del && !ci) {
+    del = 0;
+    ri = (ri + 1) % R.length;
+    setTimeout(tick, 400);
+  }
+
+  else
+    setTimeout(tick, del ? 50 : 90);
+})();
+
+const shapes = [...document.querySelectorAll(".shape[data-speed]")],
+S = [...document.querySelectorAll(".section")],
+L = [...document.querySelectorAll(".nav-link")];
+
+const io = new IntersectionObserver(
+  (es) => es.forEach(
+    (e) => e.isIntersecting && e.target.classList.add("is-visible")
+  ),
+  { threshold: 0.12 }
+);
+
+document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+if (M) (function loop() {
+  const y = scrollY;
+
+  shapes.forEach((s) => {
+    s.closest(".shape-scene").style.transform =
+      `translateY(${y * +s.dataset.speed}px)`;
   });
-});
+
+  const c = S.findLast((sec) => sec.offsetTop <= y + 120) || S[0];
+
+  L.forEach((a) =>
+    a.classList.toggle("active", a.hash === "#" + c.id)
+  );
+
+  requestAnimationFrame(loop);
+})();
+
+else
+  document.querySelectorAll(".reveal")
+    .forEach((el) => el.classList.add("is-visible"));
+
+document.querySelector(".skills-list").onclick = (e) => {
+  const c = e.target.closest(".skill-chip");
+  if (!c) return;
+
+  document.querySelectorAll(".skill-chip")
+    .forEach((x) => x.classList.toggle("is-active", x === c));
+
+  document.querySelectorAll(".project-card")
+    .forEach((card) =>
+      card.classList.toggle(
+        "is-hidden",
+        c.dataset.filter !== "all" &&
+        !card.dataset.tags.split(" ").includes(c.dataset.filter)
+      )
+    );
+};
