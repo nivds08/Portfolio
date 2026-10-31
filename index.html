@@ -1,175 +1,149 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Portfolio</title>
-
   <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
+  <div class="shape-scene ss-a" aria-hidden="true"><div class="shape-stack"><div class="shape shape-puzzle shape-puzzle-a shape-royal" data-speed="0.22"></div></div></div>
+  <div class="shape-scene ss-b" aria-hidden="true"><div class="shape-stack"><div class="shape shape-laptop shape-dark" data-speed="0.14"></div></div></div>
+  <div class="shape-scene ss-c" aria-hidden="true"><div class="shape-stack"><div class="shape shape-rocket shape-royal" data-speed="0.3"></div></div></div>
+  <div class="shape-scene ss-d" aria-hidden="true"><div class="shape-stack"><div class="shape shape-brain shape-dark" data-speed="0.12"></div></div></div>
+  <div class="shape-scene ss-e" aria-hidden="true"><div class="shape-stack"><div class="shape shape-rubik shape-royal" data-speed="0.18"></div></div></div>
 
-  <header class="site-header">
+  <div class="layout">
+    <!-- sidebar -->
+    <aside class="sidebar reveal">
+      <img class="avatar" src="assets/hero.png" alt="Nivedita">
+      <h1 class="name">NIVEDITA</h1>
+      <p class="role-badge"><span id="typing"></span></p>
 
-    <nav class="navbar" id="navbar">
+      <ul class="contact-list">
+        <li>
+          <span class="contact-icon" aria-hidden="true">✉</span>
+          <div>
+            <span class="contact-label">Email</span>
+            <a href="mailto:hello@example.com">niveditasinha0811@gmail.com</a>
+          </div>
+        </li>
+        <li>
+          <span class="contact-icon" aria-hidden="true">☎</span>
+          <div>
+            <span class="contact-label">Phone</span>
+            <a href="tel:+10000000000">+1 (000) 000-0000</a>
+          </div>
+        </li>
+        <li>
+          <span class="contact-icon" aria-hidden="true">🎂</span>
+          <div>
+            <span class="contact-label">Birthday</span>
+            <span>January 1, 2000</span>
+          </div>
+        </li>
+        <li>
+          <span class="contact-icon" aria-hidden="true">📍</span>
+          <div>
+            <span class="contact-label">Location</span>
+            <span>India</span>
+          </div>
+        </li>
+      </ul>
 
-      <a class="nav-link" href="#hero">Home</a>
+      <div class="socials">
+        <a class="social" href="#" aria-label="GitHub">GH</a>
+        <a class="social" href="#" aria-label="LinkedIn">in</a>
+        <a class="social" href="#" aria-label="Twitter">X</a>
+        <a class="social" href="#" aria-label="Email">@</a>
+      </div>
+    </aside>
 
-      <a class="nav-link" href="#about">About</a>
+    <!-- main -->
+    <div class="main-panel reveal">
+      <nav class="navbar" id="navbar">
+        <button type="button" class="nav-link active" data-panel="about">About</button>
+        <button type="button" class="nav-link" data-panel="resume">Resume</button>
+        <button type="button" class="nav-link" data-panel="portfolio">Portfolio</button>
+        <button type="button" class="nav-link" data-panel="contact">Contact</button>
+      </nav>
 
-      <a class="nav-link" href="#projects">Projects</a>
+      <!-- about -->
+      <section id="about" class="panel is-active" data-panel="about">
+        <h2>About Me</h2>
+        <p>Placeholder text about who you are and what you do. Keep it short and friendly.</p>
+        <p>Another short paragraph about your interests, focus areas, and how you like to work.</p>
 
-      <a class="nav-link" href="#skills">Skills</a>
-
-      <a class="nav-link" href="#contact">Contact</a>
-
-    </nav>
-
-  </header>
-
-
-
-  <main>
-
-    <!-- hero -->
-
-    <section id="hero" class="section reveal hero">
-
-      <div class="shape-scene ss-a" aria-hidden="true"><div class="shape-stack"><div class="shape shape-puzzle shape-puzzle-a shape-royal" data-speed="0.22"></div></div></div>
-
-      <div class="shape-scene ss-b" aria-hidden="true"><div class="shape-stack"><div class="shape shape-laptop shape-dark" data-speed="0.14"></div></div></div>
-
-      <div class="shape-scene ss-c" aria-hidden="true"><div class="shape-stack"><div class="shape shape-rocket shape-royal" data-speed="0.3"></div></div></div>
-
-      <div class="hero-layout">
-
-        <div class="hero-copy">
-
-          <h1>NIVEDITA</h1>
-
-          <p class="hero-tagline"><span id="typing"></span></p>
-
-          <a class="btn" href="#projects">View work</a>
-
+        <h3 class="subhead">What I'm Doing</h3>
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">&lt;/&gt;</span>
+            <div>
+              <h4>Web Development</h4>
+              <p>Placeholder description for web development work.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">✦</span>
+            <div>
+              <h4>Machine Learning</h4>
+              <p>Placeholder description for ML and AI projects.</p>
+            </div>
+          </article>
         </div>
+      </section>
 
-        <img class="hero-char" src="assets/hero.png" alt="">
-
-      </div>
-
-    </section>
-
-
-
-    <!-- about -->
-
-    <section id="about" class="section reveal">
-
-      <div class="shape-scene ss-d" aria-hidden="true"><div class="shape-stack"><div class="shape shape-brain shape-dark" data-speed="0.12"></div></div></div>
-
-      <h2>About</h2>
-
-      <p>Placeholder text about who you are and what you do. Keep it short and friendly.</p>
-
-    </section>
-
-
-
-    <!-- projects -->
-
-    <section id="projects" class="section reveal">
-
-      <div class="shape-scene ss-e" aria-hidden="true"><div class="shape-stack"><div class="shape shape-rubik shape-royal" data-speed="0.18"></div></div></div>
-
-      <h2>Projects</h2>
-
-      <div class="projects-grid">
-
-        <article class="project-card reveal" data-tags="web" style="--i:0">
-
-          <h3>Project One</h3>
-
-          <p>Placeholder description for the first project card.</p>
-
+      <!-- resume -->
+      <section id="resume" class="panel" data-panel="resume" hidden>
+        <h2>Resume</h2>
+        <h3 class="subhead">Education</h3>
+        <article class="timeline-item">
+          <h4>University Name</h4>
+          <p class="meta">2020 — 2024</p>
+          <p>Placeholder degree and focus area.</p>
         </article>
-
-        <article class="project-card reveal" data-tags="design" style="--i:1">
-
-          <h3>Project Two</h3>
-
-          <p>Placeholder description for the second project card.</p>
-
+        <h3 class="subhead">Experience</h3>
+        <article class="timeline-item">
+          <h4>Role Title</h4>
+          <p class="meta">2024 — Present</p>
+          <p>Placeholder description of responsibilities and impact.</p>
         </article>
+      </section>
 
-        <article class="project-card reveal" data-tags="web design" style="--i:2">
+      <!-- portfolio -->
+      <section id="portfolio" class="panel" data-panel="portfolio" hidden>
+        <h2>Portfolio</h2>
+        <p class="skills-hint">Click a chip to filter projects.</p>
+        <div class="skills-list">
+          <button type="button" class="skill-chip is-active" data-filter="all">All</button>
+          <button type="button" class="skill-chip" data-filter="web">Web</button>
+          <button type="button" class="skill-chip" data-filter="design">Design</button>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card" data-tags="web" style="--i:0">
+            <h3>Project One</h3>
+            <p>Placeholder description for the first project card.</p>
+          </article>
+          <article class="project-card" data-tags="design" style="--i:1">
+            <h3>Project Two</h3>
+            <p>Placeholder description for the second project card.</p>
+          </article>
+          <article class="project-card" data-tags="web design" style="--i:2">
+            <h3>Project Three</h3>
+            <p>Placeholder description for the third project card.</p>
+          </article>
+        </div>
+      </section>
 
-          <h3>Project Three</h3>
-
-          <p>Placeholder description for the third project card.</p>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- skills -->
-
-    <section id="skills" class="section reveal">
-
-      <div class="shape-scene ss-f" aria-hidden="true"><div class="shape-stack"><div class="shape shape-puzzle shape-puzzle-b shape-dark" data-speed="0.16"></div></div></div>
-
-      <h2>Skills</h2>
-
-      <p class="skills-hint">Click a chip to filter projects.</p>
-
-      <div class="skills-list">
-
-        <button type="button" class="skill-chip is-active" data-filter="all">All</button>
-
-        <button type="button" class="skill-chip" data-filter="web">Web</button>
-
-        <button type="button" class="skill-chip" data-filter="design">Design</button>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- contact -->
-
-    <section id="contact" class="section reveal">
-
-      <div class="shape-scene ss-g" aria-hidden="true"><div class="shape-stack"><div class="shape shape-rocket shape-dark" data-speed="0.1"></div></div></div>
-
-      <h2>Contact</h2>
-
-      <p>Placeholder email and social links go here.</p>
-
-      <a class="btn" href="mailto:hello@example.com">Say hello</a>
-
-    </section>
-
-  </main>
-
-
-
-  <footer class="site-footer">Placeholder footer text.</footer>
+      <!-- contact -->
+      <section id="contact" class="panel" data-panel="contact" hidden>
+        <h2>Contact</h2>
+        <p>Placeholder email and social links go here.</p>
+        <a class="btn" href="mailto:hello@example.com">Say hello</a>
+      </section>
+    </div>
+  </div>
 
   <script src="script.js"></script>
-
 </body>
-
 </html>
-
-
