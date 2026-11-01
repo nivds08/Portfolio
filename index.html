@@ -3,146 +3,203 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <title>Nivedita</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="shape-scene ss-a" aria-hidden="true"><div class="shape-stack"><div class="shape shape-puzzle shape-puzzle-a shape-royal" data-speed="0.22"></div></div></div>
-  <div class="shape-scene ss-b" aria-hidden="true"><div class="shape-stack"><div class="shape shape-laptop shape-dark" data-speed="0.14"></div></div></div>
-  <div class="shape-scene ss-c" aria-hidden="true"><div class="shape-stack"><div class="shape shape-rocket shape-royal" data-speed="0.3"></div></div></div>
-  <div class="shape-scene ss-d" aria-hidden="true"><div class="shape-stack"><div class="shape shape-brain shape-dark" data-speed="0.12"></div></div></div>
-  <div class="shape-scene ss-e" aria-hidden="true"><div class="shape-stack"><div class="shape shape-rubik shape-royal" data-speed="0.18"></div></div></div>
+  <svg class="sprite" aria-hidden="true">
+    <symbol id="daisy" viewBox="0 0 64 96">
+      <!-- Stem tip is exactly at y=96 so meadow translates plant it on the ground line. -->
+      <path d="M32 38 C27 58 37 76 32 96" fill="none" stroke="#6F945F" stroke-width="1.7" stroke-linecap="round"/>
+      <ellipse cx="26" cy="60" rx="6" ry="3" fill="#8AAF74" transform="rotate(-28 26 60)"/>
+      <ellipse cx="39" cy="70" rx="5" ry="2.4" fill="#8AAF74" transform="rotate(32 39 70)"/>
+      <g transform="translate(32 28)">
+        <ellipse rx="7" ry="16" transform="rotate(0)" fill="#fff" stroke="#C9D8EB" stroke-width=".6"/>
+        <ellipse rx="7" ry="16" transform="rotate(45)" fill="#fff" stroke="#C9D8EB" stroke-width=".6"/>
+        <ellipse rx="7" ry="16" transform="rotate(90)" fill="#fff" stroke="#C9D8EB" stroke-width=".6"/>
+        <ellipse rx="7" ry="16" transform="rotate(135)" fill="#fff" stroke="#C9D8EB" stroke-width=".6"/>
+        <circle r="6.5" fill="#F5C400"/>
+        <circle r="2.4" fill="#E09000"/>
+      </g>
+    </symbol>
+    <symbol id="star" viewBox="0 0 12 12">
+      <path d="M6 0 L7.1 4.4 L12 6 L7.1 7.6 L6 12 L4.9 7.6 L0 6 L4.9 4.4 Z" fill="#83B9E8"/>
+    </symbol>
+  </svg>
 
-  <div class="layout">
-    <!-- main -->
-    <div class="main-panel reveal">
-      <nav class="navbar" id="navbar">
-        <button type="button" class="nav-link active" data-panel="about">About</button>
-        <button type="button" class="nav-link" data-panel="resume">Resume</button>
-        <button type="button" class="nav-link" data-panel="portfolio">Portfolio</button>
-        <button type="button" class="nav-link" data-panel="contact">Contact</button>
-      </nav>
+  <header class="site-nav">
+    <a class="brand" href="#home">
+      <svg class="mark" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 1 L10.2 7.2 L16 9 L10.2 10.8 L9 17 L7.8 10.8 L2 9 L7.8 7.2 Z"/></svg>
+      Nivedita
+    </a>
+    <nav id="navbar">
+      <a class="nav-link active" href="#home">Home</a>
+      <a class="nav-link" href="#resume">Resume</a>
+      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#tech">Tech Stack</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+  </header>
 
-      <!-- about -->
-      <section id="about" class="panel is-active" data-panel="about">
-        <h2>About Me</h2>
-        <p>Placeholder text about who you are and what you do. Keep it short and friendly.</p>
-        <p>Another short paragraph about your interests, focus areas, and how you like to work.</p>
-
-        <h3 class="subhead">What I'm Doing</h3>
-        <div class="service-grid">
-          <article class="service-card">
-            <span class="service-icon" aria-hidden="true">&lt;/&gt;</span>
-            <div>
-              <h4>Web Development</h4>
-              <p>Placeholder description for web development work.</p>
-            </div>
-          </article>
-          <article class="service-card">
-            <span class="service-icon" aria-hidden="true">✦</span>
-            <div>
-              <h4>Machine Learning</h4>
-              <p>Placeholder description for ML and AI projects.</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- resume -->
-      <section id="resume" class="panel" data-panel="resume" hidden>
-        <h2>Resume</h2>
-        <h3 class="subhead">Education</h3>
-        <article class="timeline-item">
-          <h4>University Name</h4>
-          <p class="meta">2020 — 2024</p>
-          <p>Placeholder degree and focus area.</p>
-        </article>
-        <h3 class="subhead">Experience</h3>
-        <article class="timeline-item">
-          <h4>Role Title</h4>
-          <p class="meta">2024 — Present</p>
-          <p>Placeholder description of responsibilities and impact.</p>
-        </article>
-      </section>
-
-      <!-- portfolio -->
-      <section id="portfolio" class="panel" data-panel="portfolio" hidden>
-        <h2>Portfolio</h2>
-        <p class="skills-hint">Click a chip to filter projects.</p>
-        <div class="skills-list">
-          <button type="button" class="skill-chip is-active" data-filter="all">All</button>
-          <button type="button" class="skill-chip" data-filter="web">Web</button>
-          <button type="button" class="skill-chip" data-filter="design">Design</button>
-        </div>
-        <div class="projects-grid">
-          <article class="project-card" data-tags="web" style="--i:0">
-            <h3>Project One</h3>
-            <p>Placeholder description for the first project card.</p>
-          </article>
-          <article class="project-card" data-tags="design" style="--i:1">
-            <h3>Project Two</h3>
-            <p>Placeholder description for the second project card.</p>
-          </article>
-          <article class="project-card" data-tags="web design" style="--i:2">
-            <h3>Project Three</h3>
-            <p>Placeholder description for the third project card.</p>
-          </article>
-        </div>
-      </section>
-
-      <!-- contact -->
-      <section id="contact" class="panel" data-panel="contact" hidden>
-        <h2>Contact</h2>
-        <p>Placeholder email and social links go here.</p>
-        <a class="btn" href="mailto:hello@example.com">Say hello</a>
-      </section>
+  <!-- home -->
+  <section id="home" class="page hero is-active">
+    <div class="hero-copy">
+      <p class="kicker">AI Engineer · Builder · Creative</p>
+      <h1 class="display">Nivedita <svg class="mark" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 1 L10.2 7.2 L16 9 L10.2 10.8 L9 17 L7.8 10.8 L2 9 L7.8 7.2 Z"/></svg></h1>
+      <p class="quote">Somewhere between logic and imagination, I build things that <em>come alive.</em></p>
+      <p class="lede">Placeholder text about who you are and what you do. Keep it short and friendly. Another short paragraph about your interests, focus areas, and how you like to work.</p>
+      <div class="cta-row">
+        <a class="btn" href="#projects">View Projects <span aria-hidden="true">↗</span></a>
+        <a class="btn ghost" href="#resume">My Resume</a>
+      </div>
     </div>
 
-    <!-- sidebar -->
-    <aside class="sidebar reveal">
-      <img class="avatar" src="assets/hero.png" alt="Nivedita">
-      <h1 class="name">NIVEDITA</h1>
-      <p class="role-badge"><span id="typing"></span></p>
+    <div class="portrait">
+      <div class="aura" aria-hidden="true"></div>
+      <svg class="orbit" viewBox="0 0 420 520" aria-hidden="true">
+        <circle cx="210" cy="190" r="158"/>
+        <circle cx="210" cy="190" r="186" stroke-dasharray="3 14"/>
+        <path d="M70 210 C 40 140, 90 70, 170 58"/>
+        <path d="M330 80 C 390 120, 400 220, 350 290"/>
+        <path d="M300 40 C 250 10, 160 20, 120 70"/>
+        <circle class="mote m1" cx="318" cy="72" r="2.2"/>
+        <circle class="mote m2" cx="86" cy="128" r="1.6"/>
+        <circle class="mote m3" cx="348" cy="248" r="1.8"/>
+        <circle class="mote m4" cx="132" cy="52" r="1.4"/>
+      </svg>
+      <p class="aside-note">AI ×<br>ML ×<br>Systems ×<br>Design</p>
+      <img src="assets/portrait-clean.png" alt="Nivedita">
+    </div>
 
-      <ul class="contact-list">
-        <li>
-          <span class="contact-icon" aria-hidden="true">✉</span>
-          <div>
-            <span class="contact-label">Email</span>
-            <a href="mailto:hello@example.com">niveditasinha0811@gmail.com</a>
-          </div>
-        </li>
-        <li>
-          <span class="contact-icon" aria-hidden="true">☎</span>
-          <div>
-            <span class="contact-label">Phone</span>
-            <a href="tel:+10000000000">+1 (000) 000-0000</a>
-          </div>
-        </li>
-        <li>
-          <span class="contact-icon" aria-hidden="true">🎂</span>
-          <div>
-            <span class="contact-label">Birthday</span>
-            <span>January 1, 2000</span>
-          </div>
-        </li>
-        <li>
-          <span class="contact-icon" aria-hidden="true">📍</span>
-          <div>
-            <span class="contact-label">Location</span>
-            <span>India</span>
-          </div>
-        </li>
-      </ul>
+    <div class="flower-meadow" aria-hidden="true">
+      <svg class="flower-cluster left" viewBox="0 0 360 200" preserveAspectRatio="xMinYMax meet">
+        <g class="sway a"><g transform="translate(36,200) rotate(-10) scale(1.2)"><use href="#daisy" x="-32" y="-96"/></g></g>
+        <g class="sway b"><g transform="translate(88,200) rotate(8) scale(.82)"><use href="#daisy" x="-32" y="-96"/></g></g>
+        <g class="sway c"><g transform="translate(132,200) rotate(-14) scale(.64)"><use href="#daisy" x="-32" y="-96"/></g></g>
+        <g class="sway d"><g transform="translate(178,200) rotate(11) scale(.95)"><use href="#daisy" x="-32" y="-96"/></g></g>
+        <g class="sway e"><g transform="translate(228,200) rotate(-7) scale(.52)"><use href="#daisy" x="-32" y="-96"/></g></g>
+        <g class="sway f"><g transform="translate(272,200) rotate(9) scale(.4)"><use href="#daisy" x="-32" y="-96"/></g></g>
+        <g class="sway a"><g transform="translate(318,200) rotate(-5) scale(.34)"><use href="#daisy" x="-32" y="-96"/></g></g>
+      </svg>
+      <svg class="flower-cluster mid" viewBox="0 0 420 120" preserveAspectRatio="xMidYMax meet">
+        <g class="sway c"><g transform="translate(40,120) rotate(-8) scale(.32)"><use href="#daisy" x="-32" y="-96"/></g></g>
+        <g class="sway e"><g transform="translate(120,120) rotate(6) scale(.28)"><use href="#daisy" x="-32" y="-96"/></g></g>
+        <g class="sway b"><g transform="translate(210,120) rotate(-10) scale(.3)"><use href="#daisy" x="-32" y="-96"/></g></g>
+        <g class="sway d"><g transform="translate(300,120) rotate(8) scale(.26)"><use href="#daisy" x="-32" y="-96"/></g></g>
+        <g class="sway f"><g transform="translate(380,120) rotate(-6) scale(.3)"><use href="#daisy" x="-32" y="-96"/></g></g>
+      </svg>
+      <svg class="flower-cluster right" viewBox="0 0 360 200" preserveAspectRatio="xMaxYMax meet">
+        <g class="sway f"><g transform="translate(42,200) rotate(7) scale(.36)"><use href="#daisy" x="-32" y="-96"/></g></g>
+        <g class="sway a"><g transform="translate(88,200) rotate(-9) scale(.48)"><use href="#daisy" x="-32" y="-96"/></g></g>
+        <g class="sway d"><g transform="translate(138,200) rotate(12) scale(.7)"><use href="#daisy" x="-32" y="-96"/></g></g>
+        <g class="sway b"><g transform="translate(188,200) rotate(-6) scale(.58)"><use href="#daisy" x="-32" y="-96"/></g></g>
+        <g class="sway e"><g transform="translate(236,200) rotate(10) scale(.98)"><use href="#daisy" x="-32" y="-96"/></g></g>
+        <g class="sway c"><g transform="translate(286,200) rotate(-13) scale(.74)"><use href="#daisy" x="-32" y="-96"/></g></g>
+        <g class="sway a"><g transform="translate(332,200) rotate(8) scale(1.15)"><use href="#daisy" x="-32" y="-96"/></g></g>
+      </svg>
+    </div>
+    <svg class="curve c-hero" viewBox="0 0 200 80" aria-hidden="true"><path d="M10 70 C 60 10, 140 10, 190 50"/></svg>
+  </section>
 
-      <div class="socials">
-        <a class="social" href="#" aria-label="GitHub">GH</a>
-        <a class="social" href="#" aria-label="LinkedIn">in</a>
-        <a class="social" href="#" aria-label="Twitter">X</a>
-        <a class="social" href="#" aria-label="Email">@</a>
+  <!-- resume -->
+  <section id="resume" class="page section">
+    <p class="kicker">Experience</p>
+    <h2>Resume</h2>
+    <h3 class="subhead">Education</h3>
+    <article class="timeline-item">
+      <h4>University Name</h4>
+      <p class="meta">2020 — 2024</p>
+      <p>Placeholder degree and focus area.</p>
+    </article>
+    <h3 class="subhead">Experience</h3>
+    <article class="timeline-item">
+      <h4>Role Title</h4>
+      <p class="meta">2024 — Present</p>
+      <p>Placeholder description of responsibilities and impact.</p>
+    </article>
+  </section>
+
+  <!-- projects -->
+  <section id="projects" class="page section">
+    <div class="section-head">
+      <div>
+        <p class="kicker">My Work</p>
+        <h2>Projects</h2>
+        <svg class="curve c-title" viewBox="0 0 180 40" aria-hidden="true"><path d="M8 28 C 50 2, 130 2, 172 22"/></svg>
       </div>
-    </aside>
-  </div>
+      <p class="section-desc">Placeholder text about who you are and what you do. Keep it short and friendly.</p>
+    </div>
+
+    <div class="skills-list">
+      <button type="button" class="skill-chip is-active" data-filter="all">All</button>
+      <button type="button" class="skill-chip" data-filter="ai-ml">AI/ML</button>
+      <button type="button" class="skill-chip" data-filter="full-stack">Full Stack</button>
+      <button type="button" class="skill-chip" data-filter="systems">Systems</button>
+      <button type="button" class="skill-chip" data-filter="research">Research</button>
+    </div>
+
+    <div class="projects-grid">
+      <article class="project-card" data-tags="full-stack" style="--i:0">
+        <div class="preview vis-wave" aria-hidden="true"><span>Web</span></div>
+        <h3>Project One</h3>
+        <p>Placeholder description for the first project card.</p>
+        <a class="more" href="#contact" aria-label="View Project One">↗</a>
+      </article>
+      <article class="project-card" data-tags="systems" style="--i:1">
+        <div class="preview vis-layers" aria-hidden="true"><span>Design</span></div>
+        <h3>Project Two</h3>
+        <p>Placeholder description for the second project card.</p>
+        <a class="more" href="#contact" aria-label="View Project Two">↗</a>
+      </article>
+      <article class="project-card" data-tags="full-stack systems" style="--i:2">
+        <div class="preview vis-net" aria-hidden="true"><span>Web</span></div>
+        <h3>Project Three</h3>
+        <p>Placeholder description for the third project card.</p>
+        <a class="more" href="#contact" aria-label="View Project Three">↗</a>
+      </article>
+    </div>
+
+    <svg class="botany b6" aria-hidden="true"><use href="#daisy"/></svg>
+    <svg class="botany b7" aria-hidden="true"><use href="#daisy"/></svg>
+  </section>
+
+  <!-- tech -->
+  <section id="tech" class="page section">
+    <p class="kicker">Capabilities</p>
+    <h2>Tech Stack</h2>
+    <div class="service-grid">
+      <article class="service-card">
+        <h4>Web Development</h4>
+        <p>Placeholder description for web development work.</p>
+      </article>
+      <article class="service-card">
+        <h4>Machine Learning</h4>
+        <p>Placeholder description for ML and AI projects.</p>
+      </article>
+    </div>
+    <p class="skills-hint">Neural Networks · Inference · Vision Language Model · Embeddings · Dense Retrieval · Imitation Learning · Transformers · Artificial Intelligence</p>
+  </section>
+
+  <!-- contact -->
+  <section id="contact" class="page section">
+    <p class="kicker">Get in touch</p>
+    <h2>Contact</h2>
+    <p>Placeholder email and social links go here.</p>
+    <a class="btn" href="mailto:niveditasinha0811@gmail.com">Say hello</a>
+    <ul class="contact-list">
+      <li><span class="contact-label">Email</span> <a href="mailto:niveditasinha0811@gmail.com">niveditasinha0811@gmail.com</a></li>
+      <li><span class="contact-label">Phone</span> <a href="tel:+10000000000">+1 (000) 000-0000</a></li>
+      <li><span class="contact-label">Location</span> <span>India</span></li>
+    </ul>
+    <div class="socials">
+      <a class="social" href="#" aria-label="GitHub">GH</a>
+      <a class="social" href="#" aria-label="LinkedIn">in</a>
+      <a class="social" href="#" aria-label="Twitter">X</a>
+    </div>
+  </section>
 
   <script src="script.js"></script>
 </body>
