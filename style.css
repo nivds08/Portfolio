@@ -399,7 +399,7 @@ html.js .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
 @media (min-width: 900px) {
   .layout {
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 1fr 280px;
     align-items: start;
     padding: 2rem;
     gap: 1.5rem;
