@@ -1,3 +1,10 @@
+import { FallingLeaves } from "falling-leaves";
+
+new FallingLeaves({
+  zIndex: 0,
+  opacity: 0.7,
+});
+
 const PAGES = ["home", "resume", "projects", "tech", "contact"];
 const links = [...document.querySelectorAll(".nav-link")];
 
@@ -25,7 +32,7 @@ document.addEventListener("click", (e) => {
 window.addEventListener("popstate", () => show(location.hash.slice(1)));
 show(location.hash.slice(1) || "home");
 
-document.querySelector(".skills-list").onclick = (e) => {
+document.querySelector(".skills-list")?.addEventListener("click", (e) => {
   const c = e.target.closest(".skill-chip");
   if (!c) return;
   document.querySelectorAll(".skill-chip").forEach((x) => x.classList.toggle("is-active", x === c));
@@ -33,4 +40,4 @@ document.querySelector(".skills-list").onclick = (e) => {
   document.querySelectorAll(".project-card").forEach((card) =>
     card.classList.toggle("is-hidden", f !== "all" && !card.dataset.tags.split(" ").includes(f))
   );
-};
+});
